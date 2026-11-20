@@ -1,5 +1,7 @@
 # Loom & Bloom
 
+**Live demo: https://loom-and-bloom-syuu.netlify.app**
+
 A handloom marketplace that links weavers directly with shops and buyers.
 
 - **Weavers** start with just a brand name. They photograph a real piece and describe it by voice in their own language. **LoomVoice** turns that into a poster, a video ad, a WhatsApp caption, a pitch for shops and a product page. The weaver approves everything before it is published under their name.
