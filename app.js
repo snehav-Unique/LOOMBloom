@@ -1,4 +1,4 @@
-const products = [
+﻿const products = [
   { name: "Madder Cotton Saree", category: "Sarees", price: 2450, position: "0%" },
   { name: "Indigo Block Print Kurta", category: "Kurtas", price: 1690, position: "50%" },
   { name: "Gulab Woven Dupatta", category: "Dupattas", price: 1150, position: "100%" }

@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loom & Bloom · The Handloom Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <section id="splash" class="splash" aria-label="Loom and Bloom opening animation">
+    <div class="loom">
+      <div class="loom-frame"><div class="warp"></div><div class="cloth"></div></div>
+      <div class="chakra"></div>
+    </div>
+    <p class="wordmark">Loom <i>&amp;</i> Bloom</p>
+  </section>
+
+  <main id="login" class="login" hidden>
+    <div class="login-photo" role="img" aria-label="Handloom garments on dress forms in a textile shop"></div>
+    <section class="login-panel">
+      <div class="login-content">
+        <p class="wordmark">Loom <i>&amp;</i> Bloom</p>
+        <h1>Welcome to<br>the shop.</h1>
+        <p>Enter your email to explore the collection.</p>
+        <form id="login-form">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <button class="button" type="submit">Enter the shop <span aria-hidden="true">↗</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="store" hidden>
+    <header class="store-header">
+      <a class="wordmark" href="#store">Loom <i>&amp;</i> Bloom</a>
+      <nav aria-label="Collections">
+        <button data-filter="Sarees">Sarees</button>
+        <button data-filter="Kurtas">Kurtas</button>
+        <button data-filter="Dupattas">Dupattas</button>
+      </nav>
+      <div class="store-actions">
+        <button id="open-bag">Bag <span id="bag-count">0</span></button>
+        <button id="sign-out">Sign out</button>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">The handloom shop</p>
+          <h1>Threads<br>of <em>home.</em></h1>
+          <p>Sarees, kurtas and dupattas in earthy colours, woven textures and familiar prints.</p>
+          <a class="button" href="#collection" data-filter="All">Explore the collection <span aria-hidden="true">↘</span></a>
+        </div>
+        <img src="atelier.jpg" alt="Saree, kurta and dupatta displayed on dress forms in a sandstone textile shop">
+      </section>
+      <section class="collection" id="collection">
+        <div class="collection-header">
+          <h2 id="collection-title">Shop the collection</h2>
+          <button id="show-all" data-filter="All" hidden>View all</button>
+        </div>
+        <div id="products" class="products"></div>
+      </section>
+    </main>
+    <footer><a class="wordmark" href="#store">Loom <i>&amp;</i> Bloom</a></footer>
+    <dialog id="bag" aria-labelledby="bag-title">
+      <form method="dialog"><button aria-label="Close bag">✕</button></form>
+      <h2 id="bag-title">Your bag</h2>
+      <ul id="bag-items"></ul>
+      <p id="bag-total"></p>
+    </dialog>
+  </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+﻿:root {
+  color-scheme: light;
+  --paper: #f8f1e6;
+  --ink: #35231c;
+  --wine: #782d29;
+  --line: #d9c5ad;
+  font: 16px/1.55 system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+[hidden] { display: none !important; }
+h1, h2, .wordmark { font-family: Georgia, serif; font-weight: 400; line-height: 1; margin: 0; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:not(.button) { border: 0; background: transparent; color: inherit; padding: .4rem; }
+:focus-visible { outline: 2px solid #a7502c; outline-offset: 4px; }
+.wordmark { font-size: clamp(1.4rem, 2.5vw, 2rem); white-space: nowrap; }
+.wordmark i { color: var(--wine); }
+.button { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.5rem; width: fit-content; background: var(--wine); color: white; padding: .85rem 1.2rem; border: 1px solid var(--wine); }
+.button:hover { background: #54211e; }
+.splash { position: fixed; inset: 0; display: grid; align-content: center; justify-items: center; gap: 2rem; background: #39221c; isolation: isolate; }
+.splash::before { content: ""; position: absolute; inset: 0; z-index: -1; background: #fff; clip-path: circle(0 at center); animation: whiten .58s ease-out forwards; }
+.splash > * { opacity: 0; animation: reveal .25s .48s ease-out forwards; }
+@keyframes whiten { to { clip-path: circle(75% at center); } }
+@keyframes reveal { to { opacity: 1; } }
+.loom { position: relative; width: 210px; height: 130px; }
+.loom-frame { position: absolute; inset: 8px 36px 17px 3px; border: 10px solid #865031; border-top-color: #a06b43; border-bottom-width: 12px; background: #fff5e0; box-shadow: 0 7px 0 #613c2b; }
+.loom-frame::after { content: ""; position: absolute; left: -17px; right: -17px; top: 35px; height: 8px; background: #a06b43; }
+.warp { position: absolute; inset: 0 8px; background: repeating-linear-gradient(90deg, #c29770 0 1px, transparent 1px 6px); }
+.cloth { position: absolute; inset: 47px 8px 0; background: repeating-linear-gradient(0deg, #782d29 0 4px, #913e36 4px 5px); border-block: 3px solid #cb9760; }
+.chakra { position: absolute; right: 1px; top: 43px; width: 74px; aspect-ratio: 1; border: 5px solid #714327; border-radius: 50%; background: radial-gradient(circle, #714327 0 11%, transparent 12%), repeating-conic-gradient(#98613b 0deg 6deg, transparent 7deg 45deg), #fcf2df; animation: spin 1.1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.login { min-height: 100svh; display: grid; grid-template-columns: 1.08fr 1fr; }
+.login-photo { background: #bc8b69 url("atelier.jpg") center / cover; }
+.login-panel { display: grid; place-items: center; padding: clamp(2rem, 7vw, 7rem); }
+.login-content { width: min(100%, 420px); }
+.login .wordmark { margin-bottom: 3rem; }
+.login h1, .hero h1 { font-size: clamp(3.5rem, 8vw, 8.4rem); letter-spacing: -.065em; }
+.login h1 { font-size: clamp(3.5rem, 6vw, 6.5rem); }
+.login form { display: grid; gap: .65rem; margin-top: 2rem; }
+.login input { min-width: 0; padding: .85rem; border: 1px solid #ad947c; background: #fffaf2; color: var(--ink); }
+.login .button { width: 100%; margin-top: .45rem; }
+.store-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.2rem clamp(1rem, 5vw, 5rem); border-bottom: 1px solid var(--line); }
+.store-header nav, .store-actions { display: flex; align-items: center; gap: clamp(.15rem, 2vw, 1.25rem); }
+.store-header button:hover, .store-header button[aria-pressed="true"], #show-all { color: var(--wine); text-decoration: underline; text-underline-offset: .25rem; }
+#bag-count { padding: .12rem .38rem; border-radius: 50%; background: #ebd9c3; font-size: .8rem; }
+.hero { display: grid; grid-template-columns: .83fr 1.17fr; min-height: min(650px, 72vh); background: #efe0cb; }
+.hero-copy { padding: clamp(2.25rem, 6vw, 7rem); align-self: center; }
+.eyebrow { margin: 0 0 1.4rem; text-transform: uppercase; font-size: .75rem; font-weight: 700; letter-spacing: .2em; color: var(--wine); }
+.hero em { color: var(--wine); }
+.hero-copy > p:not(.eyebrow) { max-width: 31ch; margin: 1.35rem 0 1.6rem; }
+.hero img { width: 100%; height: 100%; object-fit: cover; min-height: 0; }
+.collection { padding: clamp(2.25rem, 6vw, 6rem) clamp(1rem, 5vw, 5rem); }
+.collection-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
+h2 { font-size: clamp(2rem, 4vw, 3.75rem); letter-spacing: -.04em; }
+.products { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.2vw, 2rem); }
+.product-photo { aspect-ratio: 3 / 4; background: #dcc5ad url("collection.jpg") var(--position) center / 300% 100% no-repeat; }
+.product h3 { font: 400 clamp(1.2rem, 2vw, 1.65rem)/1.2 Georgia, serif; margin: .9rem 0 .3rem; }
+.product-details { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .25rem; }
+.product-details button, #bag li button { color: var(--wine); text-decoration: underline; text-underline-offset: .2rem; }
+footer { border-top: 1px solid var(--line); padding: 2rem 5vw; }
+dialog { width: min(440px, calc(100% - 2rem)); max-height: 85svh; border: 1px solid var(--line); background: var(--paper); color: var(--ink); padding: 1.75rem; }
+dialog::backdrop { background: #30201999; }
+dialog form { float: right; }
+dialog ul { padding: 0; list-style: none; }
+dialog li { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .5rem 0; border-bottom: 1px solid var(--line); }
+@media (max-width: 720px) {
+  .login, .hero { grid-template-columns: 1fr; }
+  .login-photo { min-height: 33svh; }
+  .login-panel { padding: 2rem 1.3rem 3rem; }
+  .login .wordmark { margin-bottom: 1.75rem; }
+  .store-header { flex-wrap: wrap; }
+  .store-header nav { order: 3; width: 100%; justify-content: center; border-top: 1px solid var(--line); padding-top: .45rem; }
+  .hero img { aspect-ratio: 4 / 3; }
+  .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .splash::before { clip-path: none; }
+  .splash > *, .splash::before, .chakra { animation: none; opacity: 1; }
+}
