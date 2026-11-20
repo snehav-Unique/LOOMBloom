@@ -3,73 +3,76 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Loom & Bloom · The Handloom Shop</title>
+  <title>Loom &amp; Bloom</title>
+  <meta name="description" content="Handloom marketplace linking weavers with shops and buyers, with voice-first ads in Indian languages.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='26' fill='none' stroke='%238c2f28' stroke-width='6'/%3E%3Cpath d='M32 6v52M6 32h52M14 14l36 36M50 14L14 50' stroke='%23c9a14a' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%238c2f28'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/i18n-more.js" defer></script>
+  <script src="js/lexicon.js" defer></script>
+  <script src="js/ai.js" defer></script>
+  <script src="js/art.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/app.js" defer></script>
 </head>
 <body>
-  <section id="splash" class="splash" aria-label="Loom and Bloom opening animation">
-    <div class="loom">
-      <div class="loom-frame"><div class="warp"></div><div class="cloth"></div></div>
-      <div class="chakra"></div>
-    </div>
-    <p class="wordmark">Loom <i>&amp;</i> Bloom</p>
+  <!-- Opening: a white page, a working loom and a spinning charkha, for two seconds -->
+  <section id="splash" class="splash" aria-label="Loom and Bloom is opening">
+    <svg class="splash-art" viewBox="0 0 420 240" role="img" aria-label="A handloom weaving cloth beside a spinning charkha">
+      <defs>
+        <pattern id="sp-cloth" width="8" height="6" patternUnits="userSpaceOnUse">
+          <rect width="8" height="6" fill="#8c2f28"/><rect width="8" height="2" fill="#a8463a"/><rect x="0" width="1" height="6" fill="#c9a14a" opacity=".55"/>
+        </pattern>
+        <clipPath id="sp-warp"><rect x="40" y="48" width="170" height="150"/></clipPath>
+      </defs>
+      <!-- loom frame -->
+      <g class="loom-frame" stroke="#7a4b2a" stroke-linecap="round">
+        <line x1="30" y1="30" x2="30" y2="214" stroke-width="9"/>
+        <line x1="220" y1="30" x2="220" y2="214" stroke-width="9"/>
+        <line x1="20" y1="34" x2="230" y2="34" stroke-width="10"/>
+        <line x1="22" y1="206" x2="228" y2="206" stroke-width="10"/>
+        <line x1="12" y1="214" x2="48" y2="214" stroke-width="6"/>
+        <line x1="202" y1="214" x2="238" y2="214" stroke-width="6"/>
+      </g>
+      <!-- warp threads -->
+      <g clip-path="url(#sp-warp)" stroke="#d8c2a4" stroke-width="1.4">
+        <line x1="44" y1="40" x2="44" y2="200"/><line x1="52" y1="40" x2="52" y2="200"/><line x1="60" y1="40" x2="60" y2="200"/><line x1="68" y1="40" x2="68" y2="200"/><line x1="76" y1="40" x2="76" y2="200"/><line x1="84" y1="40" x2="84" y2="200"/><line x1="92" y1="40" x2="92" y2="200"/><line x1="100" y1="40" x2="100" y2="200"/><line x1="108" y1="40" x2="108" y2="200"/><line x1="116" y1="40" x2="116" y2="200"/><line x1="124" y1="40" x2="124" y2="200"/><line x1="132" y1="40" x2="132" y2="200"/><line x1="140" y1="40" x2="140" y2="200"/><line x1="148" y1="40" x2="148" y2="200"/><line x1="156" y1="40" x2="156" y2="200"/><line x1="164" y1="40" x2="164" y2="200"/><line x1="172" y1="40" x2="172" y2="200"/><line x1="180" y1="40" x2="180" y2="200"/><line x1="188" y1="40" x2="188" y2="200"/><line x1="196" y1="40" x2="196" y2="200"/><line x1="204" y1="40" x2="204" y2="200"/>
+      </g>
+      <!-- woven cloth growing up from the breast beam -->
+      <rect class="cloth" x="38" y="128" width="174" height="72" fill="url(#sp-cloth)"/>
+      <rect class="cloth-edge" x="38" y="128" width="174" height="4" fill="#c9a14a"/>
+      <!-- heddle / beater that rises and falls -->
+      <g class="heddle"><rect x="34" y="104" width="182" height="7" rx="3" fill="#a06b43"/></g>
+      <!-- shuttle passing through the shed -->
+      <g class="shuttle"><path d="M0 0 q14 -7 28 0 q-14 7 -28 0z" fill="#5a3520"/><rect x="9" y="-1.5" width="10" height="3" rx="1.5" fill="#c9a14a"/></g>
+      <!-- yarn from charkha to loom -->
+      <path class="yarn" d="M228 98 C 262 70, 290 84, 318 112" fill="none" stroke="#c9a14a" stroke-width="1.6" stroke-dasharray="4 3"/>
+      <!-- charkha -->
+      <g class="charkha-stand" stroke="#7a4b2a" stroke-width="7" stroke-linecap="round">
+        <line x1="318" y1="118" x2="290" y2="210"/><line x1="318" y1="118" x2="346" y2="210"/><line x1="270" y1="212" x2="390" y2="212"/>
+      </g>
+      <g class="charkha">
+        <circle cx="318" cy="118" r="62" fill="none" stroke="#7a4b2a" stroke-width="6"/>
+        <circle cx="318" cy="118" r="54" fill="none" stroke="#c9a14a" stroke-width="1.5" stroke-dasharray="3 5"/>
+        <g stroke="#a06b43" stroke-width="4" stroke-linecap="round">
+          <line x1="318" y1="58" x2="318" y2="178"/><line x1="258" y1="118" x2="378" y2="118"/>
+          <line x1="275.6" y1="75.6" x2="360.4" y2="160.4"/><line x1="275.6" y1="160.4" x2="360.4" y2="75.6"/>
+        </g>
+        <circle cx="318" cy="118" r="10" fill="#7a4b2a"/><circle cx="318" cy="118" r="3.5" fill="#c9a14a"/>
+      </g>
+    </svg>
+    <p class="splash-word">Loom <i>&amp;</i> Bloom</p>
   </section>
 
-  <main id="login" class="login" hidden>
-    <div class="login-photo" role="img" aria-label="Handloom garments on dress forms in a textile shop"></div>
-    <section class="login-panel">
-      <div class="login-content">
-        <p class="wordmark">Loom <i>&amp;</i> Bloom</p>
-        <h1>Welcome to<br>the shop.</h1>
-        <p>Enter your email to explore the collection.</p>
-        <form id="login-form">
-          <label for="email">Email address</label>
-          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-          <button class="button" type="submit">Enter the shop <span aria-hidden="true">↗</span></button>
-        </form>
-      </div>
-    </section>
-  </main>
+  <div id="app" hidden></div>
 
-  <div id="store" hidden>
-    <header class="store-header">
-      <a class="wordmark" href="#store">Loom <i>&amp;</i> Bloom</a>
-      <nav aria-label="Collections">
-        <button data-filter="Sarees">Sarees</button>
-        <button data-filter="Kurtas">Kurtas</button>
-        <button data-filter="Dupattas">Dupattas</button>
-      </nav>
-      <div class="store-actions">
-        <button id="open-bag">Bag <span id="bag-count">0</span></button>
-        <button id="sign-out">Sign out</button>
-      </div>
-    </header>
-    <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">The handloom shop</p>
-          <h1>Threads<br>of <em>home.</em></h1>
-          <p>Sarees, kurtas and dupattas in earthy colours, woven textures and familiar prints.</p>
-          <a class="button" href="#collection" data-filter="All">Explore the collection <span aria-hidden="true">↘</span></a>
-        </div>
-        <img src="atelier.jpg" alt="Saree, kurta and dupatta displayed on dress forms in a sandstone textile shop">
-      </section>
-      <section class="collection" id="collection">
-        <div class="collection-header">
-          <h2 id="collection-title">Shop the collection</h2>
-          <button id="show-all" data-filter="All" hidden>View all</button>
-        </div>
-        <div id="products" class="products"></div>
-      </section>
-    </main>
-    <footer><a class="wordmark" href="#store">Loom <i>&amp;</i> Bloom</a></footer>
-    <dialog id="bag" aria-labelledby="bag-title">
-      <form method="dialog"><button aria-label="Close bag">✕</button></form>
-      <h2 id="bag-title">Your bag</h2>
-      <ul id="bag-items"></ul>
-      <p id="bag-total"></p>
-    </dialog>
-  </div>
+  <dialog id="modal" aria-modal="true">
+    <button class="modal-close" type="button" aria-label="Close" data-close>✕</button>
+    <div id="modal-body"></div>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
